@@ -17,6 +17,11 @@ CONFIG_MACH_SONY_AMAMI_ROW=y
 CONFIG_PM8941_FLASH=y
 
 #
+# Miscellaneous Features
+#
+CONFIG_SOUND_CONTROL_HAX_3_GPL=y
+
+#
 # Kexec-HardBoot
 #
 CONFIG_KEXEC=y
