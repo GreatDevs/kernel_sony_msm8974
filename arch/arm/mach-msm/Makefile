@@ -462,5 +462,6 @@ obj-$(CONFIG_HAS_MACH_MEMUTILS) += memutils/
 obj-$(CONFIG_ARCH_RANDOM) += early_random.o
 obj-$(CONFIG_PERFMAP) += perfmap.o
 obj-$(CONFIG_MSM_CPUFREQ_LIMITER) += cpufreq_limit.o
+obj-$(CONFIG_MSM_SLEEPER) += msm-sleeper.o
 
 CFLAGS_board-8974-console.o += -Idrivers/staging/android
