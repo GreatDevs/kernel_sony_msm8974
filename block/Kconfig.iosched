@@ -105,6 +105,13 @@ config CGROUP_BFQIO
 	  filesystem interface.  The name of the subsystem will be
 	  bfqio.
 
+config IOSCHED_VR
+	tristate "V(R) I/O scheduler"
+	default n
+	---help---
+	  Requests are chosen according to SSTF with a penalty of rev_penalty
+	  for switching head direction.
+
 choice
 	prompt "Default I/O scheduler"
 	default DEFAULT_CFQ
@@ -147,6 +154,9 @@ choice
 		  any workload. It also tries to guarantee low latency to
 		  interactive and soft real-time applications.
 
+	config DEFAULT_VR
+		bool "V(R)" if IOSCHED_VR=y
+
 endchoice
 
 config DEFAULT_IOSCHED
@@ -158,6 +168,7 @@ config DEFAULT_IOSCHED
 	default "fiops" if DEFAULT_FIOPS
 	default "sio" if DEFAULT_SIO
 	default "bfq" if DEFAULT_BFQ
+	default "vr" if DEFAULT_VR
 
 endmenu
 
