@@ -458,6 +458,14 @@ static void get_krait_bin_format_b(struct platform_device *pdev,
 		break;
 	}
 
+#ifdef CONFIG_CPU_OC
+	*speed = 1;
+	dev_info(&pdev->dev, "GreatDevs: Forcing CPU OC upto 2.41 GHz!\n");
+#else
+	*speed = 2;
+	dev_info(&pdev->dev, "GreatDevs: Using normal CPU clocks!\n");
+#endif
+
 	/* Check SPEED_BIN_BLOW_STATUS */
 	if (pte_efuse & BIT(3)) {
 		dev_info(&pdev->dev, "Speed bin: %d\n", *speed);
