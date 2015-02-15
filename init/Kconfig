@@ -115,6 +115,13 @@ config LOCALVERSION_AUTO
 
 	  which is done within the script "scripts/setlocalversion".)
 
+config GD_EXTRAVERSION
+	bool "GreatDevs Kernel Name"
+	default n
+	help
+	  Enabling this option will add "_BETA.xx" to the localversion.
+	  This should only be enabled for devices that uses GreatDevs kernel changes.
+
 config HAVE_KERNEL_GZIP
 	bool
 
