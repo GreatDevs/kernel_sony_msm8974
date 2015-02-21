@@ -185,7 +185,7 @@ else
 	if test "${LOCALVERSION+set}" != "set"; then
 		scm=$(scm_version --short)
 		if test "$CONFIG_GD_EXTRAVERSION" = "y"; then
-		res="_BETA.08"
+		res="_BETA.09"
 		else
  		res="$res"
 		fi
