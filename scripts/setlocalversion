@@ -184,7 +184,11 @@ else
 	# LOCALVERSION= is not specified
 	if test "${LOCALVERSION+set}" != "set"; then
 		scm=$(scm_version --short)
+		if test "$CONFIG_GD_STABLEVERSION" = "y"; then
+		res="_Stable.00"
+		else
 		res="$res${scm:++}"
+		fi
 	fi
 fi
 
